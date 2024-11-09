@@ -1,0 +1,104 @@
+---
+const projects = [
+  {
+    title: "Hungrees.com",
+    description:
+      "An online food ordering platform similar to Swiggy and Zomato, with separate portals for users, restaurants, and delivery personnel. Optimized performance using service workers for fast load times and a seamless experience.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Spring Boot",
+      "AWS",
+      "Goole Maps",
+      "MySql",
+      "MongoDB",
+      "Service Workers",
+    ],
+    liveLink: "",
+  },
+  {
+    title: "UPS B2B Customer Websites",
+    description:
+      "Developed and enhanced micro front-ends for UPS's B2B websites, improving site responsiveness and user engagement with reusable UI components and modern material upgrades.",
+    technologies: ["Angular", "React", "Chart.js", "Azure"],
+    liveLink: "",
+    githubLink: "",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "A responsive, multi-page portfolio website built with Astro to showcase my projects, skills, and experience. The site features animated sections, card-based design, and an interactive contact form.",
+    technologies: ["Astro", "CSS", "JavaScript"],
+    liveLink: "https://nazeem-portfolio.com",
+    githubLink: "https://github.com/nazeem2001/portfolio",
+  },
+  {
+    title: "Programmable Macro Keypad",
+    description:
+      "A programmable macro keypad designed to automate repetitive tasks, enhancing productivity and customizability for various workflows.",
+    technologies: ["Embedded Systems", "Arduino", "C++"],
+    liveLink: "",
+    githubLink: "https://github.com/nazeem2001/new_keypad_programing",
+  },
+  {
+    title: "Laptop Monitor Software",
+    description:
+      "A security software that monitors laptop activity when the user is away, with notifications sent to a Telegram bot.",
+    technologies: ["Python", "Windows CMD", "Telegram API"],
+    liveLink: "",
+    githubLink: "https://github.com/nazeem2001/windows_cmd_telegram",
+  },
+  {
+    title: "Street Light Automation Project",
+    description:
+      "A smart street lighting automation project that utilizes sensors to control lighting, contributing to energy conservation and smart city infrastructure.",
+    technologies: ["IoT", "Microcontrollers", "Sensors"],
+    liveLink: "",
+    githubLink: "https://github.com/nazeem2001/street1",
+  },
+  {
+    title: "RC Transmitter Mouse",
+    description:
+      "A unique project that repurposes an RC transmitter to function as a computer mouse, enabling innovative control inputs.",
+    technologies: ["RC Transmitter", "Embedded Systems"],
+    liveLink: "",
+    githubLink: "https://github.com/nazeem2001/RC-mouse",
+  },
+  {
+    title: "Bluetooth Glove Mouse",
+    description:
+      "A wearable glove that functions as a Bluetooth mouse, allowing users to control their computer with hand gestures.",
+    technologies: ["Bluetooth", "Arduino", "Sensors"],
+    liveLink: "",
+    githubLink: "https://github.com/nazeem2001/Bluetooth-glove-mouse",
+  },
+];
+---
+
+<section id="projects" class="projects-section">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    {
+      projects.map((project) => (
+        <div class="project-card">
+          <h3>{project.title}</h3>
+          <div class="project-container">
+            <p>{project.description}</p>
+            <ul class="technologies">
+              {project.technologies.map((tech) => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+            <div class="project-links">
+              {project.githubLink && (
+                <a href={project.githubLink} target="_blank" class="button">
+                  GitHub
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
