@@ -1,29 +1,57 @@
 ---
 const projects = [
   {
-    title: "Hungrees.com",
+    title: "Local AI OS Controller",
     description:
-      "An online food ordering platform similar to Swiggy and Zomato, with separate portals for users, restaurants, and delivery personnel. Optimized performance using service workers for fast load times and a seamless experience.",
+      "Engineered a privacy-centric AI agent that hosts LLMs locally to manage Windows environments via natural language through Telegram, ensuring 100% data sovereignty. Integrated a LangChain Agent using ReAct (Reasoning + Acting) logic to transform the bot into a reasoning engine capable of multi-step task orchestration. Developed custom Python 'Tools' for the agent, enabling complex operations such as 'Find all PDFs on my desktop created last week' by filtering file metadata and executing system-level actions.",
     technologies: [
-      "React",
-      "TypeScript",
-      "Spring Boot",
-      "AWS",
-      "Goole Maps",
-      "MySql",
-      "MongoDB",
-      "Service Workers",
+      "Python",
+      "Local LLM (Llama-3)",
+      "LangChain",
+      "Telegram Bot API",
+      "System APIs",
     ],
     liveLink: "",
+    githubLink: "https://github.com/nazeem2001/windows_control_telegram",
   },
   {
-    title: "UPS B2B Customer Websites",
+    title: "Hungrees.com (Food Ordering Platform)",
     description:
-      "Developed and enhanced micro front-ends for UPS's B2B websites, improving site responsiveness and user engagement with reusable UI components and modern material upgrades.",
-    technologies: ["Angular", "React", "Chart.js", "Azure"],
+      "Developed a comprehensive online food ordering platform featuring distinct portals for users, restaurants, and delivery personnel. Implemented service workers to improve site performance, enabling faster load times and a smoother interface for all stakeholders.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Spring Boot",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Service Workers",
+      "RESTful APIs",
+    ],
     liveLink: "",
     githubLink: "",
   },
+  {
+    title: "UPS B2B Customer Websites",
+    description: [
+      "Developed and enhanced micro front-ends for UPS's B2B websites, improving site responsiveness and user engagement with reusable UI components and modern material upgrades.",
+      "Designed and built a custom AI Agent (integrated with GitHub Copilot) that automates the conversion of Figma screens into executable code using the organization's proprietary component library reducing development time by 50%.",
+      "Performed comprehensive API testing using REST Assured to ensure seamless integration between distributed components for an ASP.NET web application, utilizing C# and .NET Core for development.",
+    ],
+    technologies: [
+      "Angular",
+      "React",
+      "Chart.js",
+      "Azure",
+      "GitHub Copilot",
+      "REST Assured",
+      "C#",
+      ".NET Core",
+    ],
+    liveLink: "",
+    githubLink: "",
+  },
+
   {
     title: "Portfolio Website",
     description:
@@ -39,14 +67,6 @@ const projects = [
     technologies: ["Embedded Systems", "Arduino", "C++"],
     liveLink: "",
     githubLink: "https://github.com/nazeem2001/new_keypad_programing",
-  },
-  {
-    title: "Laptop Monitor Software",
-    description:
-      "A security software that monitors laptop activity when the user is away, with notifications sent to a Telegram bot.",
-    technologies: ["Python", "Windows CMD", "Telegram API"],
-    liveLink: "",
-    githubLink: "https://github.com/nazeem2001/windows_cmd_telegram",
   },
   {
     title: "Street Light Automation Project",
@@ -83,7 +103,17 @@ const projects = [
         <div class="project-card">
           <h3>{project.title}</h3>
           <div class="project-container">
-            <p>{project.description}</p>
+            {Array.isArray(project.description) ? (
+              <h5>Description:</h5>
+              <ul class="technologies">
+                {project.description.map((desc) => (
+                  <li>{desc}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{project.description}</p>
+            )}
+            {Array.isArray(project.description) && <h5>Technologies:</h5>}
             <ul class="technologies">
               {project.technologies.map((tech) => (
                 <li>{tech}</li>
